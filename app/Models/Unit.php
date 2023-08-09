@@ -12,4 +12,8 @@ class Unit extends Model
     public function unitType(){
       return $this->belongsTo(UnitType::class);
     }
+
+    public function property() {
+      return $this->belongsTo(Property::class);
+    }
 }

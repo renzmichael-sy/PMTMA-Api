@@ -12,4 +12,8 @@ class ParkingSlot extends Model
     public function contract(){
       return $this->belongsTo(UserParkingContract::class);
     }
+
+    public function property(){
+      return $this->belongsTo(Property::class);
+    }
 }

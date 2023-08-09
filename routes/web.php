@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('property.index');
 });
+
+Route::get('/property/{property}', [PropertyController::class, 'show']);
+
+Route::get('/property', [PropertyController::class, 'show']);

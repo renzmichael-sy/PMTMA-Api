@@ -20,7 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/tenant/register', 'App\Http\Controllers\AuthController@registerTenant');
 Route::post('/employee/register', 'App\Http\Controllers\AuthController@registerEmployee');
+Route::post('/owner/register', 'App\Http\Controllers\AuthController@registerOwner');
+
 Route::post('/login', 'App\Http\Controllers\AuthController@login');
+
+Route::post('/properties', 'App\Http\Controllers\PropertyController@store')->middleware('auth:api');
 
 Route::apiResource('/users', 'App\Http\Controllers\UserController')->middleware('auth:api');
 Route::apiResource('/user_households', 'App\Http\Controllers\UserHouseholdController')->middleware('auth:api');

@@ -43,9 +43,9 @@ class UserController extends Controller
       $user = User::findOrFail($id);
 
       $validator = Validator::make($request->all(), [
-        'first_name' => 'max:45',
-        'last_name' => 'max:45',
-        'gender' => 'max:1',
+        'first_name' => 'required|max:45',
+        'last_name' => 'required|max:45',
+        'gender' => 'required|max:1',
         'contact_number' => 'max:20',
         'occupation' => 'max:65',
         'birthday' => 'max:45',

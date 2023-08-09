@@ -20,7 +20,6 @@ class CreateEmployeesTable extends Migration
             $table->string('contact_number',20);
             $table->tinyInteger('gender');
             $table->bigInteger('user_id');
-            $table->foreign()
             $table->tinyInteger('is_active')->default(1)->unsigned();
             $table->timestamps();
         });
